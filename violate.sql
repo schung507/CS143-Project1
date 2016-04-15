@@ -26,7 +26,7 @@ DELETE FROM Director;
 DELETE FROM Actor;
 -- MovieActor table references Actor(id) so deleting all actor violates constraint
 
-INSERT INTO MovieActor VALUES ('9', '3');
+INSERT INTO MovieActor VALUES ('9', '3', 'Herself');
 -- All aid's must reference Actor(id) but there is no actor with id 3
 
 -- CHECKS
