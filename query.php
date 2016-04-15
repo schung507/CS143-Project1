@@ -31,7 +31,7 @@
 		$field_num = mysql_num_fields($rs);
 
 		print "<h1>Results:</h1>";
-		print "<table><tr>";
+		print "<table border='1'><tr>";
 
 		
 		for($i = 0; $i < $field_num; $i++){
