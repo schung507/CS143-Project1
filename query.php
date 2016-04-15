@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form method="POST">
+<form method="GET">
 	<textarea name="query" rows=10 cols=60> </textarea>
 	<input type="submit" value="Enter">
 </form>	
@@ -23,7 +23,7 @@
 	mysql_select_db("CS143", $db_connection);
 
 
-	$query = $_POST["query"];
+	$query = $_GET["query"];
 
 	if(!empty($query)){
 
