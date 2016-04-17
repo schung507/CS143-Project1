@@ -1,14 +1,14 @@
 -- Answers to database query questions
 
 -- Names of all the actors in 'Die Another Day'
-SELECT concat(first, " ", last)
+SELECT concat(first, " ", last) as name
 FROM Actor, Movie, MovieActor
 WHERE MovieActor.mid = Movie.id
 		AND Actor.id = MovieActor.aid
 		AND Movie.title = "Die Another Day";
 
 -- Count of actors who are in multiple movies
-SELECT count(*)
+SELECT count(*) as actorsInMultipleMovies
 from (	
 		SELECT aid
 		FROM MovieActor
@@ -31,7 +31,7 @@ WHERE Movie.id = Sales.mid
 								WHERE Sales.mid <> s.mid); -- make sure not to compare movie with itself
 
 -- Count of number of female and male actors who directed and were in their own movies
-SELECT Actor.sex, count(*)
+SELECT Actor.sex, count(*) as number
 FROM Actor, MovieDirector, MovieActor
 WHERE MovieDirector.did = Actor.id
 		AND MovieActor.aid = Actor.id
