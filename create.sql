@@ -19,7 +19,7 @@ CREATE TABLE Actor (
 	dob DATE,
 	dod DATE,
 	PRIMARY KEY (id), -- actor id is unique among actors
-	CHECK (dod IS NOT NULL) -- actor must have dob
+	CHECK (dob IS NOT NULL) -- actor must have dob
 )ENGINE = INNODB;
 
 CREATE TABLE Sales (
