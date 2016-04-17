@@ -4,11 +4,11 @@ INSERT INTO Movie VALUES (9,'Zootopia',2016,'PG','Walt Disney');
 -- there is already a movie with id 9 so this tuple is not unique, violates primary key constraint
 -- Output: ERROR 1062 (23000): Duplicate entry '9' for key 'PRIMARY'
 
-INSERT INTO Actor VALUES (10, 'Watson', 'Emma', 'Female', 19900415, NULL);
+INSERT INTO Actor VALUES (10, 'Watson', 'Emma', 'Female', 1990-04-15, NULL);
 -- there is already an actor with id 10 so this tuple is not unique
 -- Output: ERROR 1062 (23000): Duplicate entry '10' for key 'PRIMARY'
 
-INSERT INTO Director VALUES (104, 'Spielberg', 'Steven', 19461218, NULL);
+INSERT INTO Director VALUES (104, 'Spielberg', 'Steven', 1946-12-18, NULL);
 -- there is already an actor with id 104 so this tuple is not unique, violates primary key constraint
 -- Output: ERROR 1062 (23000): Duplicate entry '104' for key 'PRIMARY'
 
