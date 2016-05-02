@@ -19,27 +19,27 @@
 						<option value="NC-17">NC17</option></select></p>
 	<p>Company: <input type="text" name="company" required></p>
 	<p>Genre:
-		<br><input type="checkbox" name="genre" value="Action"> Action
-		<br><input type="checkbox" name="genre" value="Adult"> Adult
-		<br><input type="checkbox" name="genre" value="Adventure"> Adventure
-		<br><input type="checkbox" name="genre" value="Animation"> Animation
-		<br><input type="checkbox" name="genre" value="Comedy"> Comedy
-		<br><input type="checkbox" name="genre" value="Crime"> Crime
-		<br><input type="checkbox" name="genre" value="Documentary"> Documentary
-		<br><input type="checkbox" name="genre" value="Drama"> Drama
-		<br><input type="checkbox" name="genre" value="Family"> Family
-		<br><input type="checkbox" name="genre" value="Fantasy"> Fantasy
-		<br><input type="checkbox" name="genre" value="Fantasy"> Foreign
-		<br><input type="checkbox" name="genre" value="Horror"> Horror
-		<br><input type="checkbox" name="genre" value="Musical"> Musical
-		<br><input type="checkbox" name="genre" value="Romance"> Romance
-		<br><input type="checkbox" name="genre" value="Sci-Fi"> Sci-Fi
-		<br><input type="checkbox" name="genre" value="Short"> Short
-		<br><input type="checkbox" name="genre" value="Thriller"> Thriller
-		<br><input type="checkbox" name="genre" value="War"> War
-		<br><input type="checkbox" name="genre" value="Western"> Western
-	<p>IMDb Rating (1-100): <input type="number" name="imdb_rating" min="0" max="100"></p>
-	<p>Rotten Tomatoes Rating (1-100): <input type="number" name="rotten_rating" min="0" max="100"></p>
+		<br><input type="checkbox" name="genre[]" value="Action"> Action
+		<br><input type="checkbox" name="genre[]" value="Adult"> Adult
+		<br><input type="checkbox" name="genre[]" value="Adventure"> Adventure
+		<br><input type="checkbox" name="genre[]" value="Animation"> Animation
+		<br><input type="checkbox" name="genre[]" value="Comedy"> Comedy
+		<br><input type="checkbox" name="genre[]" value="Crime"> Crime
+		<br><input type="checkbox" name="genre[]" value="Documentary"> Documentary
+		<br><input type="checkbox" name="genre[]" value="Drama"> Drama
+		<br><input type="checkbox" name="genre[]" value="Family"> Family
+		<br><input type="checkbox" name="genre[]" value="Fantasy"> Fantasy
+		<br><input type="checkbox" name="genre[]" value="Fantasy"> Foreign
+		<br><input type="checkbox" name="genre[]" value="Horror"> Horror
+		<br><input type="checkbox" name="genre[]" value="Musical"> Musical
+		<br><input type="checkbox" name="genre[]" value="Romance"> Romance
+		<br><input type="checkbox" name="genre[]" value="Sci-Fi"> Sci-Fi
+		<br><input type="checkbox" name="genre[]" value="Short"> Short
+		<br><input type="checkbox" name="genre[]" value="Thriller"> Thriller
+		<br><input type="checkbox" name="genre[]" value="War"> War
+		<br><input type="checkbox" name="genre[]" value="Western"> Western
+	<p>IMDb Rating (0-100): <input type="number" name="imdb_rating" min="0" max="100"></p>
+	<p>Rotten Tomatoes Rating (0-100): <input type="number" name="rotten_rating" min="0" max="100"></p>
 	<p><input type="submit" value="Enter"> <input type="reset" value="Reset"></p>
 
 <?php 
@@ -67,7 +67,7 @@
 	$year = $_POST["year"];
 	$mpaa_rating = $_POST["mpaa_rating"];
 	$company = $_POST["company"];
-	$genres = $_POST["genre"];
+	$genre = $_POST["genre"];
 	$imdb = $_POST["imdb_rating"];
 	$rotten = $_POST["rotten_rating"];
 
@@ -82,10 +82,11 @@
 		if (mysql_query($insert, $db_connection)) {
 		
 			//insert into the MovieGenre Relation
-			if (!empty($genre)) {
-				foreach ($genres as $genre) {
+			if (!empty($genre)) {				
+				foreach ($genre as $gen) {
+					print "poop";
 					$insert = "INSERT INTO MovieGenre 
-							VALUES(" . $id . ", '" . $genre . "');";
+							VALUES(" . $id . ", '" . $gen . "');";
 
 					mysql_query($insert, $db_connection);
 				}
