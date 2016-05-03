@@ -26,7 +26,6 @@
 	<p>Which movie would you like to rate?</p><p><select name="title"></p>';
 
 	$rs = mysql_query($movies, $db_connection);
-	$row = mysql_fetch_row($rs);
 
 	while($row = mysql_fetch_row($rs))
 		print '<option value="' . $row[0] . '">' . $row[1] . '</option>';

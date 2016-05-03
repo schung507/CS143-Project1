@@ -27,7 +27,6 @@
 	<p>Movie Title: <select name="title"></p>';
 
 	$rs = mysql_query($movies, $db_connection);
-	$row = mysql_fetch_row($rs);
 
 	while($row = mysql_fetch_row($rs))
 		print '<option value="' . $row[0] . '">' . $row[1] . '</option>';
@@ -39,7 +38,6 @@
 	echo '<p>Add New Actor: <select name="name"></p>';
 
 	$result = mysql_query($actors, $db_connection);
-	$row = mysql_fetch_row($result);
 
 	while($row = mysql_fetch_row($result))
 		print '<option value="' . $row[1] . '">' . $row[0] . '</option>';
