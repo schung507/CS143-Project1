@@ -84,9 +84,9 @@
 			//insert into the MovieGenre Relation
 			if (!empty($genre)) {				
 				foreach ($genre as $gen) {
-					print "poop";
+					
 					$insert = "INSERT INTO MovieGenre 
-							VALUES(" . $id . ", '" . $gen . "');";
+								VALUES(" . $id . ", '" . $gen . "');";
 
 					mysql_query($insert, $db_connection);
 				}

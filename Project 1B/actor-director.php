@@ -24,7 +24,7 @@
 	<p>Date of death, if applicable: <input type="text" name="m_dod" style="width: 20px;"> / 
 										<input type="text" name="d_dod" style="width: 20px;"> / 
 										<input type="text" name="y_dod" style="width: 40px;"></p>
-	<p><input type="submit" value="Enter"> <input type="reset" value="Reset"></p>
+	<p><input type="submit" value="Enter" name="submit"> <input type="reset" value="Reset"></p>
 </form>	
 
 <?php
@@ -69,10 +69,10 @@
 
 	//Add the new tuple to the database.
 	$insert_a = "INSERT INTO Actor 
-				VALUES(" . $id . ", '" . $firstname . "', '" . $lastname . "', '" . $sex . "', '"
+				VALUES(" . $id . ", '" . $lastname . "', '" . $firstname . "', '" . $sex . "', '"
 						. $dob . "', " . $dod . ");";
 	$insert_d = "INSERT INTO Director 
-				VALUES(" . $id . ", '" . $firstname . "', '" . $lastname . "', '" . $dob . "', " . $dod . ");";
+				VALUES(" . $id . ", '" . $lastname . "', '" . $firstname . "', '" . $dob . "', " . $dod . ");";
 
 	//Redundant code - clean up later
 	if (isset($_POST['submit'])) {

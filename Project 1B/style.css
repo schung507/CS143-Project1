@@ -1,0 +1,93 @@
+* {
+	font-family: Verdana, Geneva, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	background-color: black;
+}
+
+p {
+	font-size: 12px;
+	color: white;
+}
+
+input, input:hover {
+	background-color: #282929;
+	border: none;
+	color: white;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+a, a:visited {
+	color: white;
+	text-decoration: none;
+	transition: background-color 1.5s, color 1.5s;
+}
+
+a:hover {
+	color: black;
+	background-color: #E2E5FA;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: white;
+	margin: 2%;
+}
+
+.container {
+	display: flex;
+	width: 90%;
+	margin: 0 auto;
+	padding: 0;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.item {
+	font-size: 0.7em;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 140px;
+	width: 150px;
+	height: 150px;
+}
+
+.movie-item {
+	font-size: 0.7em;
+	padding: 50px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.search {
+	text-align: center;
+	margin: 20px auto;
+}
+
+.search form p, .search form input {
+	font-size: 1em;
+}
+
+.nav {
+	width: 100%;
+	text-align: center;
+}
+
+nav {
+	margin: 0 auto;
+	color: white;
+	list-style-type: none;
+}
+
+nav li {
+	display: inline-block;
+	padding: 5px 10px;
+	margin: 10px;
+}

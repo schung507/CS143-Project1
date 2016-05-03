@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>
 	</title>
 </head>
 <body>
 
-<form method="GET">
-<p>Search for a Movie or Actor: <input type="text" name="search" required> 
-<input type="submit" value="Search" name="submit"></p>
-</form>
+<div class="search">
+	<form method="GET">
+	<p>Search for a Movie or Actor: <input type="text" name="search" required> 
+	<input type="submit" value="Search" name="submit"></p>
+	</form>
+</div>
+
+<div class="nav">
+<nav>
+	<li>+Add Actors/Directors</li>
+	<li>+Add Movies</li>
+	<li>+Add Actors to Movies</li>
+	<li>+Add Directors to Movies</li>
+	<li>+View Actor Info</li>
+	<li>+View Movie Info</li>
+</nav>
+</div>
 
 <?php 
 	$db_connection = mysql_connect("localhost:3036", "cs143", "");
@@ -49,12 +63,14 @@
 
 		$actor_rs = mysql_query($select, $db_connection);
 
-		echo '<p>Actors who match your search:';
+		echo '<h5>Actors who match your search, ordered alphabetically by last name:</h5><div class="container">';
 
 		//Output clickable links for actors
 		while($row = mysql_fetch_row($actor_rs)) {
-			echo '<p><a href="../actor.php?id=' . $row[1] . '">' . $row[0] . '</a></p>';
+			echo '<a href="actor.php?id=' . $row[1] . '"><div class="item">' . $row[0] . '</div></a>';
 		}
+
+		echo '</div>';
 
 		//Query Movie Titles
 		$select = "SELECT title, id
@@ -63,18 +79,21 @@
 
 		$movie_rs = mysql_query($select, $db_connection);
 
-		echo '<p>Movies that match your search:';
+		echo '<h5>Movies that match your search:</h5><div class="container">';
 
 		//Output clickable links for movies
 		while($row = mysql_fetch_row($movie_rs)) {
-			echo '<p><a href="../movie.php?id=' . $row[1] . '">' . $row[0] . '</a></p>';
+			echo '<a href="movie.php?id=' . $row[1] . '"><div class="movie-item">' . $row[0] . '</div></a>';
 		}
+
+		echo '</div>';
 
 	} 
 
 	mysql_close($db_connection);
  ?>
 
+</div>
 
 </body>
 
