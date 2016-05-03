@@ -5,38 +5,63 @@
 }
 
 html, body {
-	background-color: black;
+	background-color: #373737;
+	height: 100%;
+	min-height: 100%;
+	overflow: scroll;
 }
 
 p {
-	font-size: 12px;
-	color: white;
+	font-size: 1em;
+	padding:3px;
 }
 
 input, input:hover {
-	background-color: #282929;
 	border: none;
+	padding: 2px;
+}
+
+input[type=submit], input[type=reset]{
+	padding: 5px;
+	font-size: 1em;
+}
+
+input[type=submit]:hover, input[type=submit]:active, input[type=reset]:hover, input[type=reset]:active{
 	color: white;
+	cursor: pointer;
+	padding: 5px;
 }
 
 textarea:focus, input:focus{
     outline: none;
+    padding: 2px;
 }
 
 a, a:visited {
-	color: white;
 	text-decoration: none;
 	transition: background-color 1.5s, color 1.5s;
 }
 
-a:hover {
+.content a:hover {
 	color: black;
 	background-color: #E2E5FA;
 }
 
+.content a, a:visited{
+	text-decoration: none;
+	color: #373737;
+}
+
 h1, h2, h3, h4, h5, h6 {
-	color: white;
 	margin: 2%;
+}
+
+.content {
+	padding: 20px;
+	float: right;
+	width: 70%;
+	background-color: #f4f4f4;
+	min-height: 100%;
 }
 
 .container {
@@ -46,22 +71,21 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 0;
 	flex-wrap: wrap;
 	justify-content: space-between;
+
 }
 
 .item {
 	font-size: 0.7em;
 	margin: 0;
-	padding: 0;
+	padding: 5px;
 	text-align: center;
 	vertical-align: middle;
-	line-height: 140px;
-	width: 150px;
-	height: 150px;
+	line-height: 20px
 }
 
 .movie-item {
 	font-size: 0.7em;
-	padding: 50px;
+	padding: 5px;
 	text-align: center;
 	vertical-align: middle;
 }
@@ -74,20 +98,62 @@ h1, h2, h3, h4, h5, h6 {
 .search form p, .search form input {
 	font-size: 1em;
 }
-
+.nav a{
+	color: white;
+	text-decoration: none;
+}
 .nav {
-	width: 100%;
-	text-align: center;
+	float: left;
+	width: 20%;
+	min-height: 100%;
+	height: 100%;
+	background-color: #373737;
+}
+
+.nav a:hover{
+	color:white;
+	background-color: #ababab;
+
+}
+
+.nav a:visited{
+	text-decoration: none;
+	color: white;
 }
 
 nav {
-	margin: 0 auto;
+	margin: 0;
 	color: white;
 	list-style-type: none;
+	background-color: #373737;
 }
 
+
 nav li {
-	display: inline-block;
+	color: white;
 	padding: 5px 10px;
 	margin: 10px;
+	background-color: #373737;
+	text-overflow: wrap;
+}
+
+table {
+	border-collapse: collapse;
+	border: 1px solid #f4f4f4;
+}
+
+th{
+	background-color: #c0b283;
+	border: 1px solid #f4f4f4;
+	color: white;
+	padding: 3px;
+	
+}
+
+td{
+	background-color: #dcd0c0;
+	color:#373737;
+	padding: 3px;
+	border: 1px solid #f4f4f4;
+	
 }

@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="style.css">
+
 	<title>
 	</title>
 </head>
 <body>
 
-<p>Showing Actor Information</p>
+<div class="nav">
+<nav>
+	<li><a href="actor-director.php">+Add Actors/Directors</a></li>
+	<li><a href="add-movie.php">+Add Movies</a></li>
+	<li><a href="movie-actor.php">+Add Actors to Movies</a></li>
+	<li><a href="movie-director.php">+Add Directors to Movies</a></li>
+	<li><a href="actor.php">+View Actor Info</a></li>
+	<li><a href="movie.php">+View Movie Info</a></li>
+	<li><a href="review.php">+Add Review</a></li>
+	<li><a href="search.php">+Search</a></li>
+</nav>
+</div>
+
+<div class="content">
+<h1>Showing Actor Information</h1>
 
 <?php 
 	$db_connection = mysql_connect("localhost:3036", "cs143", "");
@@ -30,23 +46,16 @@
 
 		print "<table border='1'><tr>";
 
-		
-		for($i = 0; $i < $field_num; $i++){
-			$field_name = mysql_fetch_field($rs, $i);
-
-			print "<th>$field_name->name</th>";
-
-		}
-
-		print "</tr>";
-		
 		while($row = mysql_fetch_row($rs)) {
-			print "<tr>";
+			print "<tr><th>Name</th><td>".$row[2]." ".$row[1]."</td></tr>";
+			print "<tr><th>Sex</th><td>".$row[3]."</td></tr>";
+			print "<tr><th>Date of Birth</th><td>".$row[4]."</td></tr>";
+			if(is_null($row[5]))
+				print "<tr><th>Date of Death</th><td>Still Alive</td></tr>";
+			else
+				print "<tr><th>Date of Death</th><td>".$row[5]."</td></tr>";
 
-			foreach($row as $field_cell)
-				print "<td>$field_cell</td>";
 
-			print "</tr>";
 		}
 
 		print "</table>";
@@ -58,22 +67,13 @@
 		$field_num = mysql_num_fields($rs);
 
 		print "<h1>Movie Results:</h1>";
-		print "<table border='1'><tr>";
+		print "<table border='1'><tr><th>Title</th><th>Role</th></tr>";
 
-		
-		for($i = 0; $i < 2; $i++){
-			$field_name = mysql_fetch_field($rs, $i);
-
-			print "<th>$field_name->name</th>";
-
-		}
-
-		print "</tr>";
 		
 		while($row = mysql_fetch_row($rs)) {
 			echo "<tr>";
 
-			echo '<td><a href="movie-info.php?id=' . $row[2] . '">' . $row[0] . '</a></td>';
+			echo '<td><a href="movie.php?id=' . $row[2] . '">' . $row[0] . '</a></td>';
 			echo "<td>" . $row[1] . "</td>";
 
 			echo "</tr>";
@@ -82,6 +82,8 @@
 		echo "</table>";
 
 	} 
+
+	print"</div>";
 
 	mysql_close($db_connection);
  ?>

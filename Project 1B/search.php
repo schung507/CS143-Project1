@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="style.css">
+
 	<title>
+
 	</title>
 </head>
 <body>
+
+
+<div class="nav">
+<nav>
+	<li><a href="actor-director.php">+Add Actors/Directors</a></li>
+	<li><a href="add-movie.php">+Add Movies</a></li>
+	<li><a href="movie-actor.php">+Add Actors to Movies</a></li>
+	<li><a href="movie-director.php">+Add Directors to Movies</a></li>
+	<li><a href="actor.php">+View Actor Info</a></li>
+	<li><a href="movie.php">+View Movie Info</a></li>
+	<li><a href="review.php">+Add Review</a></li>
+	<li><a href="search.php">+Search</a></li>
+</nav>
+</div>
+
+
+
+<div class="content">
 
 <div class="search">
 	<form method="GET">
 	<p>Search for a Movie or Actor: <input type="text" name="search" required> 
 	<input type="submit" value="Search" name="submit"></p>
 	</form>
-</div>
-
-<div class="nav">
-<nav>
-	<li>+Add Actors/Directors</li>
-	<li>+Add Movies</li>
-	<li>+Add Actors to Movies</li>
-	<li>+Add Directors to Movies</li>
-	<li>+View Actor Info</li>
-	<li>+View Movie Info</li>
-</nav>
 </div>
 
 <?php 
@@ -57,7 +66,7 @@
 		}
 
 		//Query Actor First and Last Names
-		$select = "SELECT concat(last, ', ', first), id
+		$select = "SELECT concat(last, ', ', first), id, dob
 					FROM Actor
 					WHERE (last like '%" . $search_words[0] . "%' OR first like '%" . $search_words[0] . "%')" . $added_parameters . ";";
 
@@ -67,13 +76,13 @@
 
 		//Output clickable links for actors
 		while($row = mysql_fetch_row($actor_rs)) {
-			echo '<a href="actor.php?id=' . $row[1] . '"><div class="item">' . $row[0] . '</div></a>';
+			echo '<a href="actor.php?id=' . $row[1] . '"><div class="item">' . $row[0] . '('.$row[2].')</div></a>';
 		}
 
 		echo '</div>';
 
 		//Query Movie Titles
-		$select = "SELECT title, id
+		$select = "SELECT title, id, year
 					FROM Movie
 					WHERE title like '%" . $search_words[0] . "%'" . $added_title_parameters . ";";	
 
@@ -83,17 +92,15 @@
 
 		//Output clickable links for movies
 		while($row = mysql_fetch_row($movie_rs)) {
-			echo '<a href="movie.php?id=' . $row[1] . '"><div class="movie-item">' . $row[0] . '</div></a>';
+			echo '<a href="movie.php?id=' . $row[1] .  '"><div class="movie-item">' . $row[0] . '('.$row[2].')</div></a>';
 		}
 
-		echo '</div>';
+		echo '</div></div></div>';
 
 	} 
 
 	mysql_close($db_connection);
  ?>
-
-</div>
 
 </body>
 

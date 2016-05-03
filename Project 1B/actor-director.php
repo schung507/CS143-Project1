@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="style.css">
+
 	<title>
 	</title>
 </head>
 <body>
 
-<p>Add a new Actor/Director to the Database:</p>
+<div class="nav">
+<nav>
+	<li><a href="actor-director.php">+Add Actors/Directors</a></li>
+	<li><a href="add-movie.php">+Add Movies</a></li>
+	<li><a href="movie-actor.php">+Add Actors to Movies</a></li>
+	<li><a href="movie-director.php">+Add Directors to Movies</a></li>
+	<li><a href="actor.php">+View Actor Info</a></li>
+	<li><a href="movie.php">+View Movie Info</a></li>
+	<li><a href="review.php">+Add Review</a></li>
+	<li><a href="search.php">+Search</a></li>
+</nav>
+</div>
+
+<div class="content">
+<h1>Add a new Actor/Director to the Database:</h1>
 
 <form method="POST">
 	<br>I want to add: <input type="radio" name="type" value="actor" checked> Actor 
@@ -97,6 +113,8 @@
 		else
 	    	echo "Oops! Something went wrong.";
 	}
+
+	print"</div>";
 
 	mysql_close($db_connection);
 ?>

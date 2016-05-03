@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="style.css">
+
 	<title>
 	</title>
 </head>
 <body>
 
-<p>Add a new Movie to the Database:</p>
+<div class="nav">
+<nav>
+	<li><a href="actor-director.php">+Add Actors/Directors</a></li>
+	<li><a href="add-movie.php">+Add Movies</a></li>
+	<li><a href="movie-actor.php">+Add Actors to Movies</a></li>
+	<li><a href="movie-director.php">+Add Directors to Movies</a></li>
+	<li><a href="actor.php">+View Actor Info</a></li>
+	<li><a href="movie.php">+View Movie Info</a></li>
+	<li><a href="review.php">+Add Review</a></li>
+	<li><a href="search.php">+Search</a></li>
+</nav>
+</div>
+
+<div class="content">
+<h1>Add a new Movie to the Database:</h1>
 
 <form method="POST">
 	<p>Title: <input type="text" name="title" required></p>
@@ -105,7 +121,7 @@
 			echo "Oops! Something went wrong adding your movie.";
 
 	}
-
+	print "</div>";
 	mysql_close($db_connection);
  ?>
 
