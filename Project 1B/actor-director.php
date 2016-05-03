@@ -75,27 +75,28 @@
 				VALUES(" . $id . ", '" . $firstname . "', '" . $lastname . "', '" . $dob . "', " . $dod . ");";
 
 	//Redundant code - clean up later
-	if ($firstname == "") {}
-	else if ($type == "actor" && mysql_query($insert_a, $db_connection)) {
-    	echo "New record created successfully!";
+	if (isset($_POST['submit'])) {
+		if ($type == "actor" && mysql_query($insert_a, $db_connection)) {
+	    	echo "New record created successfully!";
 
-    	$update = "UPDATE MaxPersonID SET id = " . $id . ";";
-		mysql_query($update, $db_connection);
-	}
-	else if ($type == "director" && mysql_query($insert_d, $db_connection)) {
-    	echo "New record created successfully!";
+	    	$update = "UPDATE MaxPersonID SET id = " . $id . ";";
+			mysql_query($update, $db_connection);
+		}
+		else if ($type == "director" && mysql_query($insert_d, $db_connection)) {
+	    	echo "New record created successfully!";
 
-    	$update = "UPDATE MaxPersonID SET id = " . $id . ";";
-		mysql_query($update, $db_connection);
-	}
-	else if ($type == "both" && mysql_query($insert_a, $db_connection) && mysql_query($insert_d, $db_connection)) {
-    	echo "New record created successfully!";
+	    	$update = "UPDATE MaxPersonID SET id = " . $id . ";";
+			mysql_query($update, $db_connection);
+		}
+		else if ($type == "both" && mysql_query($insert_a, $db_connection) && mysql_query($insert_d, $db_connection)) {
+	    	echo "New record created successfully!";
 
-    	$update = "UPDATE MaxPersonID SET id = " . $id . ";";
-		mysql_query($update, $db_connection);
+	    	$update = "UPDATE MaxPersonID SET id = " . $id . ";";
+			mysql_query($update, $db_connection);
+		}
+		else
+	    	echo "Oops! Something went wrong.";
 	}
-	else
-    	echo "Oops! Something went wrong.";
 
 	mysql_close($db_connection);
 ?>

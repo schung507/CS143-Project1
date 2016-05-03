@@ -40,7 +40,7 @@
 		<br><input type="checkbox" name="genre[]" value="Western"> Western
 	<p>IMDb Rating (0-100): <input type="number" name="imdb_rating" min="0" max="100"></p>
 	<p>Rotten Tomatoes Rating (0-100): <input type="number" name="rotten_rating" min="0" max="100"></p>
-	<p><input type="submit" value="Enter"> <input type="reset" value="Reset"></p>
+	<p><input type="submit" value="Enter" name="submit"> <input type="reset" value="Reset"></p>
 
 <?php 
 	$db_connection = mysql_connect("localhost:3036", "cs143", "");
@@ -73,7 +73,7 @@
 
 
 
-	if ($title != "") {
+	if (isset($_POST['submit'])) {
 
 		//insert into the Movie Relation
 		$insert = "INSERT INTO Movie 

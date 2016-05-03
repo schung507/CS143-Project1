@@ -44,7 +44,7 @@
 
 	//Take form input
 
-	//if (isset($_POST['submit'])) {
+	if (isset($_POST['submit'])) {
 
 		//store values from the form
 		$mid = $_POST["title"];
@@ -59,7 +59,7 @@
 			echo "Whoo! Your rating was added.";
 		else
 			echo "Something happened. Sorry about that!";
-	//}
+	}
 
 	mysql_close($db_connection);
  ?>
