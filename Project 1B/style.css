@@ -24,6 +24,8 @@ input, input:hover {
 input[type=submit], input[type=reset]{
 	padding: 5px;
 	font-size: 1em;
+	background-color: #dcd0c0;
+	border-color: #dcd0c0;
 }
 
 input[type=submit]:hover, input[type=submit]:active, input[type=reset]:hover, input[type=reset]:active{

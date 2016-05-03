@@ -123,7 +123,7 @@
 
 		while($row = mysql_fetch_row($rs)) {
 			
-			echo "Average Score:".$row[0]."/5 (5.0 is best) by. ".$row[1]. " reviews(s).<a href='review.php'>Add Review!</a>";
+			echo "Average Score:".$row[0]."/5 (5.0 is best) by ".$row[1]. " reviews(s).<a href='review.php'>Add Review!</a>";
 		}
 
 		$rs = mysql_query($retrieve_reviews, $db_connection);
