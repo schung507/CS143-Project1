@@ -76,7 +76,7 @@
 
 		//Output clickable links for actors
 		while($row = mysql_fetch_row($actor_rs)) {
-			echo '<a href="actor.php?id=' . $row[1] . '"><div class="item">' . $row[0] . '('.$row[2].')</div></a>';
+			echo '<a href="actor.php?id=' . $row[1] . '"><div class="item">' . $row[0] . ' ('.$row[2].')</div></a>';
 		}
 
 		echo '</div>';
@@ -92,7 +92,7 @@
 
 		//Output clickable links for movies
 		while($row = mysql_fetch_row($movie_rs)) {
-			echo '<a href="movie.php?id=' . $row[1] .  '"><div class="movie-item">' . $row[0] . '('.$row[2].')</div></a>';
+			echo '<a href="movie.php?id=' . $row[1] .  '"><div class="movie-item">' . $row[0] . ' ('.$row[2].')</div></a>';
 		}
 
 		echo '</div></div></div>';
