@@ -22,6 +22,7 @@
 </div>
 
 <div class="content">
+<p>Search for movies <a href="search.php">here</a><p>
 <h1>Showing Movie Information</h1>
 
 <?php 

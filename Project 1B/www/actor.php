@@ -22,6 +22,7 @@
 </div>
 
 <div class="content">
+<p>Search for actors <a href="search.php">here</a><p>
 <h1>Showing Actor Information</h1>
 
 <?php 
