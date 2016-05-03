@@ -40,21 +40,20 @@ textarea:focus, input:focus{
 
 a, a:visited {
 	text-decoration: none;
-	transition: background-color 1.5s, color 1.5s;
 }
 
 .content a:hover {
 	color: black;
-	background-color: #E2E5FA;
+	border-bottom: 1px dotted black;
 }
 
 .content a, a:visited{
 	text-decoration: none;
-	color: #373737;
+	color: #5C5751;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	margin: 2%;
+	margin-bottom: 20px;
 }
 
 .content {
@@ -89,7 +88,6 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 5px;
 	text-align: center;
 	vertical-align: middle;
-	transition: background-color 2s;
 }
 
 .movie-item:hover {
@@ -117,9 +115,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav a:hover{
-	color:white;
-	background-color: #ababab;
-
+	color: white;
+	border-bottom: 1px dotted white;
 }
 
 .nav a:visited{
@@ -129,6 +126,7 @@ h1, h2, h3, h4, h5, h6 {
 
 nav {
 	margin: 0;
+	width: 100%;
 	color: white;
 	list-style-type: none;
 	background-color: #373737;
@@ -137,15 +135,16 @@ nav {
 
 nav li {
 	color: white;
+	width: 100%;
 	padding: 5px 10px;
-	margin: 10px;
+	margin: 10px 0;
 	background-color: #373737;
-	text-overflow: wrap;
 }
 
 table {
 	border-collapse: collapse;
 	border: 1px solid #f4f4f4;
+	margin-bottom: 10px;
 }
 
 th {
@@ -161,5 +160,4 @@ td {
 	color:#373737;
 	padding: 5px 10px;
 	border: 1px solid #f4f4f4;
-	
 }
