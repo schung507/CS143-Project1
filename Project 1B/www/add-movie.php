@@ -25,7 +25,7 @@
 <h1>Add a new Movie to the Database:</h1>
 
 <form method="POST">
-	<p>Title: <input type="text" name="title" required></p>
+	<p>Title: <input type="text" name="title" maxlength="100" required></p>
 	<p>Year released: <input type="number" name="year" min="1890" max="2016" required></p>
 	<p>MPAA Rating: <select name="mpaa_rating">
 						<option value="G">G</option>

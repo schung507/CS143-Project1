@@ -2,7 +2,7 @@
 
 Part 1B
 --------
-Created a fully functioning Movie Database system through a Web Interface. We were able to fullfill all the project criteria. 
+Created a fully functioning Movie Database system through a Web Interface. We were able to fulfill all the project criteria. 
 
 Files/features included: 
 	actor-director.php - add new actor or director to database
@@ -25,10 +25,10 @@ Lynn worked on
 	movie-director.php 
 	style.css
 Stella worked on
-	movie.php - displays individual movie information
-	review.php - allows you to add reviews to movies and give own ratings
-	search.php - search for movies or actors
+	movie.php 
+	review.php 
+	search.php
 	styles.css
 	Selenium test files
 
-
+Improvements: For better collaboration, setting up a schedule with my partner and dividing up the tasks beforehand would have been helpful, but collaboration went well for this project overall.

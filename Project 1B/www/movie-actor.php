@@ -58,7 +58,7 @@
 	while($row = mysql_fetch_row($result))
 		print '<option value="' . $row[1] . '">' . $row[0] . '</option>';
 
-	echo '</select><p>Role: <input type="text" name="role" required></p><p><input type="submit" value="Add Actor!" name="submit"></p></form>';
+	echo '</select><p>Role: <input type="text" name="role" maxlength="50" required></p><p><input type="submit" value="Add Actor!" name="submit"></p></form>';
 
 	if (isset($_POST['submit'])) {
 

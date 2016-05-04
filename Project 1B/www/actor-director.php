@@ -28,8 +28,8 @@
 	<br>I want to add: <input type="radio" name="type" value="actor" checked> Actor 
 						<input type="radio" name="type" value="director"> Director
 						<input type="radio" name="type" value="both"> Both
-	<p>First name: <input type="text" name="first_name" required>
-	<p>Last name: <input type="text" name="last_name" required></p>
+	<p>First name: <input type="text" name="first_name" maxlength="20" required>
+	<p>Last name: <input type="text" name="last_name" maxlength="20" required></p>
 	<p>Sex: <input type="radio" name="gender" value="Male" checked> Male 
 			<input type="radio" name="gender" value="Female"> Female</p>
 	<p>Date of birth (mm/dd/yyyy): <input type="text" name="m_dob" style="width: 20px;" required> / 
